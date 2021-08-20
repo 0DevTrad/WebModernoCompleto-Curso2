@@ -1,6 +1,8 @@
 // Criando um Objeto
 const prod1 = {};
-prod1.nome = "Celular Ultra Mega"; // Adicionando chave e valor
+
+// Adicionando chave e valor
+prod1.nome = "Celular Ultra Mega";
 prod1.preco = 4998.9;
 
 // Outra forma de adicionar chave e valor
