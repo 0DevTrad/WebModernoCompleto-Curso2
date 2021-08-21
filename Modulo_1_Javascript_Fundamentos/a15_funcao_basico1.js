@@ -12,9 +12,9 @@ imprimirSoma(); // NaN
 
 //Função com retorno
 function soma(a, b = 0) {
-  // O valor padrão de b será 0
   return a + b;
 }
+// O valor padrão de b será 0
 
 console.log(soma(2, 3)); // 5
 console.log(soma(2)); // 2 + 0 = 2
