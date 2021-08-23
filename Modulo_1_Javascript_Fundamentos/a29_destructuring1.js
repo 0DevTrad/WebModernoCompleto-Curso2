@@ -1,4 +1,4 @@
-// Recurso introduzido no ES6
+// Recurso introduzido no ES6(2015)
 
 const pessoa = {
   nome: "Ana",
