@@ -9,4 +9,4 @@ const obj = { max: 50, min: 40 };
 console.log(rand(obj));
 console.log(rand({ min: 955 })); // Entre 955 e 1000
 console.log(rand({})); // Entre 0 e 1000
-//console.log(rand()); // Erro!
+//console.log(rand()); // Erro! Undefined
