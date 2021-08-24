@@ -21,5 +21,5 @@ seForVerdadeEuFalo(-1); // É verdade... -1
 seForVerdadeEuFalo(" "); // É verdade...
 seForVerdadeEuFalo("?"); // É verdade... ?
 seForVerdadeEuFalo([]); // É verdade...
-seForVerdadeEuFalo([1, 2]); // É verdade... 1,2
+seForVerdadeEuFalo([1, 2]); // É verdade... 1, 2
 seForVerdadeEuFalo({}); // É verdade... [object Object]
