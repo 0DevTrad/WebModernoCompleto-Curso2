@@ -22,6 +22,5 @@ exec() // Global
     Ao chamar a função exec(), é chamado a função minhaFuncao()
     e como dentro dela não "valor" definido, mas sim uma chamada
     de impressão, console.log(valor), ela vai procurar o "valor"
-    em um contexto mais abrangente, no caso o global onde a const
-    valor se encontra.
+    em um contexto mais abrangente.
 */
