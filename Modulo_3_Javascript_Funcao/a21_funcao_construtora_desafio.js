@@ -13,4 +13,7 @@ p1.falar()
     Pode ser executada como uma função ou pode ser 
     utilizada para instanciar um objeto utilizando 
     a palavra reservada new.
+
+    this.falar: Para trnaformar a função pra ficar
+    na instância criada.
 */
