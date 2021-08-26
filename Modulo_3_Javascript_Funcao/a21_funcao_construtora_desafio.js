@@ -8,3 +8,9 @@ function Criarpessoa(nome) {
 
 const p1 = new Criarpessoa('João')
 p1.falar()
+
+/*
+    Pode ser executada como uma função ou pode ser 
+    utilizada para instanciar um objeto utilizando 
+    a palavra reservada new.
+*/
