@@ -9,4 +9,4 @@ function baseElevadaAoExpoente(base, expoente) {
     return resultado
 }
 
-console.log(baseElevadaAoExpoente(2, 2))
+console.log(baseElevadaAoExpoente(2, 2)) // 4
