@@ -11,15 +11,17 @@
 // Delta = b**2 - 4*a*c
 
 function bhaskara(ax2, bx, c) {
+    const resultado = []
     const delta = (bx ** 2) - (4 * ax2 * c)
-    const x1 = (-bx + Math.sqrt(delta)) / (2 * ax2)
-    const x2 = (-bx - Math.sqrt(delta)) / (2 * ax2)
-
-    if (delta >= 0) {
-        return console.log(`vetor 1: ${x1} vetor 2: ${x2}`)
-    } else {
+    if (delta < 0) {
         return console.log('Delta é negativo')
     }
+    const x1 = (-bx + Math.sqrt(delta)) / (2 * ax2)
+    const x2 = (-bx - Math.sqrt(delta)) / (2 * ax2)
+    resultado.push(x1)
+    resultado.push(x2)
+    return console.log(resultado)
 }
+
 bhaskara(1, 3, 2) // vetor 1: -1 vetor 2: -2
 bhaskara(1, 2, 25) // Delta é negativo
