@@ -43,7 +43,7 @@ console.log(volvo.__proto__ === Object.prototype) //true
 console.log(Object.prototype.__proto__) // null
 
 /*
-    A partir de __proto__ é possível acessar quem é o protóripo desse objeto, 
+    A partir de __proto__ é possível acessar quem é o protótipo desse objeto, 
     o objeto pai. Caso eu tente acessar um atributo dentro de ferrari e não 
     encontre, ele vai procurar esse mesmo atributo dentro do protótipo e 
     repetirá o processo até achar, caso não ache retornará undefined.
