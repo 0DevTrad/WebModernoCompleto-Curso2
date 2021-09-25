@@ -7,7 +7,7 @@ const filha1 = Object.create(pai)
 console.log(filha1) // {}
 /*
     O Object.create() cria um objeto novo tendo como
-    protótipo o objeto passado, nessa caso o pai.
+    protótipo o objeto passado, nesse caso o pai.
 
     Em vez de criar apontanto Object.prototye, ele já
     aponta para o pai.
@@ -24,7 +24,7 @@ const filha2 = Object.create(pai, {
     }
 })
 
-console.log(filha2.nome)
+console.log(filha2.nome) // Bia
 filha2.nome = 'Carla' // Nome não pode ser reescrito (writeable: false)
 console.log(`${filha2.nome} tem cabelo ${filha2.corCabelo}`) // Bia tem cabelo preto
 
