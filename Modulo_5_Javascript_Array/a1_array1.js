@@ -50,4 +50,4 @@ aprovados.splice(1, 1)
 console.log(aprovados) // [ 'Bia', 'Ana' ]
 
 aprovados.splice(1, 0, 'Elemento1', 'Elemento2')
-console.log(aprovados) // 
+console.log(aprovados) // [ 'Bia', 'Elemento1', 'Elemento2', 'Ana' ]
