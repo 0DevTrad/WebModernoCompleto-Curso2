@@ -1,6 +1,6 @@
 // Para importar algo usando o commonJS (sistema de módulo do node) precisa usar o require.
-const moduloA = require('./moduloA')
-const moduloB = require('./moduloB')
+const moduloA = require('./a1_moduloA')
+const moduloB = require('./a1_moduloB')
 
 //  ./ -> Referenciando um módulo que está presente dentro do sistema. (Caminho relativo)
 // ../ -> Sair da pasta
