@@ -6,6 +6,9 @@
 const moduloA = require('../../a1_moduloA')
 console.log(moduloA.ola)
 
+const c = require('./pastaC/a3_index')
+console.log(c.ola2)
+
 /*
     '../../a1_moduloA'
     O jeito certo é respeitar as letras maiúscuolas e minúsculas.
@@ -17,3 +20,10 @@ console.log(moduloA.ola)
     shift + alt + c
 
 */
+
+const http = require('http') // http é um módulo interno do node
+http.createServer((req, res) => {
+    res.write('Bom dia!')
+    res.end()
+}).listen(8080)
+// Vai rodar no browser no http://localhost:8080/
