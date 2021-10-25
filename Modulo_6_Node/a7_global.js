@@ -6,3 +6,5 @@ global.MinhaApp = Object.freeze({
 })
 
 // Evitar mexer no objeto global
+
+// Código interligado (Aula 7 - code 1)
