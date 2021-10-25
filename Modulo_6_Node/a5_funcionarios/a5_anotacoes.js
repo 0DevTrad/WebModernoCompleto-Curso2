@@ -28,6 +28,8 @@
 
     o axios é um client http, ele faz requisições para obter informações de algo que está remoto.
 
+    'start' e 'test' são comandos padrões do node, por isso podem ser acionados apenas com o comando
+    'npm start' ou 'npm test. Para comandos criados como 'dev' é necessário executar como 'npm run dev'
 */
 
 // Código interligado (Aula 5 - notes 1)
