@@ -15,7 +15,7 @@ function logThis() {
     this.perigo2 = 20
 
     // console.log(perigo) // err!
-    console.log(perigo2)
+    console.log(perigo2) // 20
 }
 
 this.perigo = 10
