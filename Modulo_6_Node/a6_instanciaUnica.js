@@ -5,3 +5,5 @@ module.exports = {
         this.valor++
     }
 }
+
+// Código interligado (Aula 6 - code 1)

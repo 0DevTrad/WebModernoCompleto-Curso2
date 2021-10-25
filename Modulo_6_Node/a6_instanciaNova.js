@@ -7,3 +7,5 @@ module.exports = () => {
         }
     }
 }
+
+// Código interligado (Aula 6 - code 2)

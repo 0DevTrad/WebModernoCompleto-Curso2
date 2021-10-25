@@ -30,3 +30,5 @@ console.log(contadorC.valor, contadorD.valor) // 3 1
 */
 
 // .inc() -> incrementa
+
+// Código interligado (Aula 6 - code 3)
