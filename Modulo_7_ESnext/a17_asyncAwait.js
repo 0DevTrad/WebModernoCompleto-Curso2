@@ -26,7 +26,7 @@ async function executar() {
     console.log('Async/Await 3...')
 }
 
-//executar()
+executar()
 
 // Exemplo síncrono
 // Desse modo, ele vai executar cada linha a cada 1,5 segundos.
@@ -39,7 +39,7 @@ async function executar2() {
     console.log('Async/Await 3...')
 }
 
-//executar2()
+executar2()
 
 
 function retornarValor() {
