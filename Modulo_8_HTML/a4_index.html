@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+</head>
+<body>
+    <header>
+        Exercícios HTML
+    </header>
+    <nav>
+        <a href="a4_exercicios/teste.html">00 - Teste</a> |
+        <a href="a4_exercicios/temp.html">Temp</a>
+    </nav>
+    <section id="conteudo"></section>  
+    <footer>
+        <br>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo') // Obtendo o conteúdo
+            
+            link.onclick = function(e) {
+                e.preventDefault() // Ele previne que o comportamento padrão, no caso a navegação, ocorra.
+                fetch(link.href) //Fazendo uma requisição Ajax usando o fetch // fetch atua em cima de promise
+                    .then(resp => resp.text()) //text() é uma função para pegar o conteúdo html da página que foi feita a requisição. // Também retorna uma promise
+                    .then(html => conteudo.innerHTML = html)
+
+            }       
+        })
+    </script>  
+</body>
+</html>
+
+<!--
+    Caso eu tivesse criado uma propriedade personalizada para fazer esse mesmo código, algumas substituições teriam
+    que ser feitas:
+
+    1 - <a href="a4_exercicios/teste.html">00 - Teste</a> |
+        <a href="a4_exercicios/temp.html">Temp</a>
+
+        Seriam substituidos por:
+
+        <a href wm-nav="a4_exercicios/teste.html">00 - Teste</a> |
+        <a href wm-nav="a4_exercicios/temp.html">Temp</a>
+
+    2 - document.querySelectorAll('a')
+        
+        Seria substituído por:
+
+        document.querySelectorAll('[wm-nav]')
+
+    3 - fetch(link.href)
+
+        Seria substituído por:
+
+        fetch(link.getAttribute('wm-nav'))
+-->
