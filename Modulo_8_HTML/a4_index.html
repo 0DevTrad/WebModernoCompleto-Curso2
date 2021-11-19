@@ -16,21 +16,27 @@
         Exercícios HTML
     </header>
     <nav>
-        <a href="a4_exercicios/teste.html">00 - Teste</a> |
-        <a href="a4_exercicios/texto1.html">01 - Texto 1</a> |
-        <a href="a4_exercicios/texto2.html">02 - Texto 2</a> |
+        <a href wm-nav="a4_exercicios/teste.html">00 - Teste</a href> |
+        <a href wm-nav="a4_exercicios/texto1.html">01 - Texto 1</a href> |
+        <a href wm-nav="a4_exercicios/texto2.html">02 - Texto 2</a href> |
+        <a href wm-nav="a4_exercicios/listas.html">03 - Listas</a href> |
+        <a href wm-nav="a4_exercicios/listaAninhada.html">04 - Lista Aninhada</a href> |
+        <a href wm-nav="a4_exercicios/links.html">05 - Links</a> |
+        <a href wm-nav="a4_exercicios/tabela.html">06 - Tabela</a> |
+        <a href wm-nav="a4_exercicios/formulario/form.html">07 - Formulário</a> |
+        <a href wm-nav="a4_exercicios/imagens.html">08 - Imagens</a> |
     </nav>
     <section id="conteudo"></section>  
     <footer>
         Curso de Web Moderno
     </footer>
     <script>
-        document.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('[wm-nav]').forEach(link => {
             const conteudo = document.getElementById('conteudo') // Obtendo o conteúdo
             
             link.onclick = function(e) {
                 e.preventDefault() // Ele previne que o comportamento padrão, no caso a navegação, ocorra.
-                fetch(link.href) //Fazendo uma requisição Ajax usando o fetch // fetch atua em cima de promise
+                fetch(link.getAttribute('wm-nav')) //Fazendo uma requisição Ajax usando o fetch // fetch atua em cima de promise
                     .then(resp => resp.text()) //text() é uma função para pegar o conteúdo html da página que foi feita a requisição. // Também retorna uma promise
                     .then(html => conteudo.innerHTML = html)
 
