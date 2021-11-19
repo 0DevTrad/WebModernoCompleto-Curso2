@@ -1,0 +1,65 @@
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu browser não suporta a tag video.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progresso > div {
+        background-color: red;
+        color: #fff;
+        height:  100%;
+        text-align: right;
+        font-size: 14px;
+        width:  0%;
+    }
+</style>
+
+<script>
+    function configurarVideo(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false // Evita que o usuário consiga clica com o botão direito em cima do vídeo e possa fazer o download
+
+        document.querySelector(`[wm-play = ${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause = ${id}]`).onclick = e => video.pause()
+
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[wm-progresso = ${id}] > div`)
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed()}%`
+        }, 500)
+    }
+        
+    configurarVideo('meuVideo')
+</script>
+
+<!-- 
+    A vantagem de colocar o link do vídeo no source e não na tag video 
+    está na possibilidade de você colocar links com outro formato como 
+    alternativa, em caso dele não suportar um ele executa o outro. 
+
+    controls -> Ao inserir essa função, se vídeo ganha as fuções básicas
+    de um player de vídeo. Play/pause, volume, barra de progressão,
+    velocidade de progressão, zom in/out e download.
+
+    autoplay -> Essa função permite que o vídeo execute assim que a página
+    onde ele se encontra for aberta.
+
+    controlsList="nodownload" -> Impede a função download de aparecer.
+-->
