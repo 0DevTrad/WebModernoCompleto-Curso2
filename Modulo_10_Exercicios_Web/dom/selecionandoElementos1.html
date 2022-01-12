@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>
+        //Aplicando a classe destaque ao ID              
+        document.getElementById('primeiro').classList.add('destaque')
+
+        //Removendo a classe destaque de todas as tagnames 'div'
+        const divs = document.getElementsByTagName('div')
+        Array.from(divs).forEach(e=> e.classList.remove('destaque'))
+
+        // Aplicando a classe destaque a todos os elementos div com forEach
+        const divsArray = [...divs]
+        divsArray.forEach(e=> e.classList.add('destaque'))
+
+        // Recebendo uma lista da classe selecionada
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        // Removendo o destaque do elemento da classe selecionada.
+        for(let e of ultimosElementos) {
+            e.classList.remove('destaque')
+        }
+
+        // Dentro da const divs há HTMLCollection e algumas coisa não dá pra fazer com elas, as vezes é interessante transformar em array.
+    </script>
+</body>
+</html>
