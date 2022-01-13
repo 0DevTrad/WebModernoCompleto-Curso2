@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        function log() {
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+        
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log() // parentNode permite que a partir de um elemento(div ul) você consiga facilmente pegar o elemento pai(div)
+        lista.childNodes.log() // Dará o acesso ao filho(li) da div ul. Porém trará além do li, texts por causa da quebra de linha(espaço) no código.
+
+        const primeiro = lista.firstChild
+        primeiro.log() //#text
+        primeiro.nextSibling.log() //li // Pegando o irmão do #text
+
+        const ultimo = lista.lastChild
+        ultimo.log() //#text
+        ultimo.previousSibling.log() //li
+        
+        lista.children.log() // Não vem os textos e sim os li e como HTMLCollection
+        lista.firstElementChild.log() // li - Pedro
+        lista.lastElementChild.log() // li - Bia
+        lista.parentNode.previousElementSibling.log() // div de início
+        lista.parentNode.nextElementSibling.log() //div fim
+
+        document.querySelectorAll('div ul li').log() //Nodelist com os 3 li
+    
+    </script>
+</body>
+
+</html>
