@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]') // Poderia ter sido subistituido por '#compras' mas para exemplo se fez de outro jeito para demonstrar um seletor mais complexo. 
+        console.log('ELemento "ul"................')
+        console.log('childNodes', lista.childNodes)
+        console.log('destino', lista.destino) //undefined
+        console.log('getAttribute', lista.getAttribute('destino')) // Usando essa função ele considera as propriedades personalizadas mas usando a notação ponto retorna undefined.
+        console.log('hasAttribute', lista.hasAttribute('destino')) // Para saber se um atributo está ou não presente dentro de um determinado elemento.
+        lista.setAttribute('destino', 'empresa') // O valor destino deixou de ser escritório e passou a ser empresa
+        lista.setAttribute('status', 'aberto') // O método setAttribute serve pra alterar um atributo ou adicionar um novo atributo.
+        lista.removeAttribute('destino') // Remover atributo
+
+        // É possível definir uma propriedade personalizada como por exemplo o "destino" ou "status" porém os atrbutos criados com o prefixo "data-" são tratados ligeiramente diferente.
+        console.log(lista.dataset) // urgencia: "5"
+        lista.dataset.urgencia = 4 // urgencia: "4"
+        console.log(lista.getAttribute('data-urgencia')) // 4
+
+        // Cuidados
+        // Nem sempre o atributo que está definido no HTML estará disponível para ser acessado com o mesmo nome.
+
+        const label = document.querySelector('label')
+        console.log(label.for) // Como 'for' é uma palavra reservada da linguagem não é possível usar o identificador como sendo um for.
+        console.log(label.htmlFor) // Dessa forma é possível
+        console.log(label.getAttribute('for')) // Ou dessa forma
+
+    </script>
+</body>
+
+</html>
