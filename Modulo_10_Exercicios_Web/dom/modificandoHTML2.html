@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <p>Texto Inicial</p>
+    </div>
+    <script>
+       const div = document.querySelector('div')
+       div.innerHTML = 'Texto Alterado' // Substitui o conteúdo interno da div
+       //div.outerHTML ='Texto Alterado' // Substitui a div também, ou seja, a div deixa de existir
+       div.insertAdjacentHTML('beforebegin', '<p>Antes Início</p>') // Inserir um HTMl, 'Beforebegin' -> Antes do início
+       div.insertAdjacentHTML('afterbegin', '<p>Depois Início</p>')
+       div.insertAdjacentHTML('beforeend', '<p>Antes Fim</p>')
+       div.insertAdjacentHTML('afterend', '<p>Depois Fim</p>')
+
+        // Somente texto (sem tags)
+        console.log(div.innerHTML)
+        console.log(div.innerText) // Somente texto
+
+    </script>
+</body>
+
+</html>
