@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <!-- 1º Opção de interceptação-->
+
+        <!--<a href="https://google.com.br"
+            onclick="navegarEm5s(event)">Google</a>-->
+
+        <a espera-um-pouco href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        // Interceptando o clique
+        function navegarEm5s(e) {
+            e.preventDefault() // Prevenindo que o evento padrão ocorra
+            console.log('Saindo em 5s...')
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href
+            }, 5000)
+        }
+
+        // Na function posso colocar e mas no html inline precisa ser "event"
+
+
+        // 2º Opção de interceptação
+
+        // const a = document.querySelector('a')
+        // a.onclick = navegarEm5s
+
+        // 3º Opção de interceptação
+        
+        const a = document.querySelector('[espera-um-pouco]')
+        a.onclick = navegarEm5s
+
+        // A primeira abordagem é muito hardcode
+        // A segunda abordagem é mais sutil porém muito implícita
+        // A terceira abordagem é o melhor dos mundos, pois deixa claro no html sem ter que usar classe que normalmente é usada para estilo e sim usando uma propriedade personalizada.
+        // O atributo personalizado é completamente ignorado pelo browser, presupõem que se você colocou o atributo ele será lido pelo JS
+    </script>
+</body>
