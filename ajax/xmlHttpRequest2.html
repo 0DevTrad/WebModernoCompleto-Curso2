@@ -26,7 +26,7 @@
            const xhr = new XMLHttpRequest()
 
            if (xhr.upload) {
-               xhr.upload.onprogress = e => {
+               xhr.upload.onprogress = e => { // Forma de monitorar o progresso do upload (onprogress)
                    const atual = e.loaded
                    const total = e.total
                    const percentual = Math.floor(atual / total * 100)
@@ -34,13 +34,14 @@
                }
            }
 
+           // Post -> Enviando informações pro servidor. Diferente do primeiro caso em que só foi lido as informações.
            xhr.open("post", config.url, true) 
            xhr.send(config.formData)
        }
 
        document.querySelector('input[type=file]').onchange = e => {
            const formData = new FormData()
-           const inputFile = e.target
+           const inputFile = e.target // e.target é o input que tem o tipo file 'arquivo'
            formData.append(inputFile.name, inputFile.files[0])
 
            ajaxUpload({
