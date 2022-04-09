@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur Oliveira",
+      "email": "arthur_oliveira@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Nala Dias Cardoso",
+      "email": "auau_baguncinha@pet.com"
+    }
+  ]
+}
