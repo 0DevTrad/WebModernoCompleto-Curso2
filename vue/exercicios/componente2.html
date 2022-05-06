@@ -2,29 +2,36 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Componente</title>
+    <title>Componente2</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
     <div id="app">
-        <saudacao nome="Ana"></saudacao>
-        <saudacao nome="Bia"></saudacao>
-        <saudacao nome="Julia"></saudacao>
+        <contador></contador>
+        <contador></contador>
+        <contador></contador>
     </div>
-
     <script>
-      Vue.component('saudacao', {
-            props: ['nome'],
+        Vue.component('contador', {
             data: function() {
                 return {
                     contador: 0
                 }
             },
+            methods: {
+                add() {
+                    this.contador++
+                }
+            },
             template: `
-                <div>Bom dia {{ nome }}!</div>
+                <div>
+                    <span>>{{ contador }}</span>
+                    <button @click="add">+1</button>
+                    <button @click="contador--">-1</button>
+                </div>
             `
-      })
+        })
 
       new Vue ({
           el: "#app"

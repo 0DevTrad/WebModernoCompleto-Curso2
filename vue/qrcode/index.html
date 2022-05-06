@@ -10,9 +10,40 @@
 </head>
 
 <body>
-
+    <div id="app">
+        <h1>{{ title }}</h1>
+    <div>
+        <input type="text" size="25"
+        placeholder="Digite para gerar..."
+        v-model="text">
+    </div>
+    <div v-if="text" class="output">
+        <img :src="newQRCode" alt="QRCode">
+    </div>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Gerador QRCode',
+                text: 'https://www.cod3r.com.br',
+                qrcode: new QRious ({ size: 300 })
+            },
+            computed: {
+                newQRCode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                }
+            },
+            // methods: {
+            //     onData(event) {
+            //         this.text = event.target.value
+            //     }
+            // }
+        })
+
+        // ' :vmodel="text" @input="onData"> ' foi substituído por ' v-model="text"> ' e methods foi comentado:
+        // Acontece que o v-model já faz a implementação de two-way data binding, não necessitando criar um método para atualizar conforme os dados vão sendo preenchidos.
     </script>
 </body>
 

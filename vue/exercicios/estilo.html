@@ -12,9 +12,28 @@
     </style>
 </head>
 <body class="exercicio">
-
+    <!-- <div id="app" @click="aplicarCor = !aplicarCor"
+        :class="{vermelho: aplicarCor}"> -->
+    <div id="app" @click=aplicarCor2()
+        :class="{vermelho: aplicarCor}">
+        Teste
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                aplicarCor: false
+            },
+            methods: {
+                aplicarCor2() {
+                    this.aplicarCor = !this.aplicarCor
+                }
+            }
+        })
+
+        //"{vermelho: aplicarCor}" -> classe que vai ser aplicada : variável que vai dizer se vai ou não ser aplicada
+        // Se a classe não tiver algum caractere válido coloque entre aspas simples
+        // A aplicação de cor comentada é a mesma refatorada usando methods.
     </script>
 </body>
 </html>

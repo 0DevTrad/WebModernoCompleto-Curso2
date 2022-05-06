@@ -7,9 +7,34 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <p>{{link}}</p>
+        <p><a href="{{link}}">Canal?</a></p>
+        <p><a v-bind:href="link">Canal!!!</a></p>
+        <p><a :href="link">Canal</a></p>
+        <p>
+            <input type="text" v-model="nome"><br>
+            <span>{{nome}}</span>
+        </p>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                nome: "Nala",
+                link: "https://youtube.com/cod3rcursos"
+            },
+            watch: {
+                nome(novoValor) {
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+        })
+        // v-bind:href -> diretiva. Pode ser aplicado pra qualquer outra propriedade, dessa forma você indica que o conteúdo dessa propriedade precisa ser interpolada.
+        // diretivas são propriedades personalizadas.
+        // :href Outra forma de fazer bind, usando apenas os : + a tag
+        // v-model -> Gera atualização nas duas direções.
+        // watch -> Dentro do watch permite que você receba um valor e faça alguma manipulação. Ex: checkbox "aceita os termos" e libera um botão de continuar.
     </script>
 </body>
 </html>
